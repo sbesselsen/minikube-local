@@ -46,11 +46,13 @@ spec:
     app: echo
   ports:
   - port: 80
+    targetPort: 80
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
+    kubernetes.io/ingress.class: nginx
   labels:
     app: echo
   name: echo
@@ -60,7 +62,8 @@ spec:
   - host: echo.local
     http:
       paths:
-      - backend:
+      - path: /
+        backend:
           serviceName: echo
           servicePort: 80
   # tls:
