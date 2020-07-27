@@ -16,4 +16,10 @@ nodes:
     hostPort: 443
     protocol: TCP
 - role: worker
+  extraMounts:
+  - hostPath: "%DIR%/data"
+    containerPath: /var/local-path-provisioner
 - role: worker
+  extraMounts:
+  - hostPath: "%DIR%/data"
+    containerPath: /var/local-path-provisioner
