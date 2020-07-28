@@ -15,4 +15,7 @@ $DIR/cert-manager/setup.sh
 # Other resources
 kubectl apply -f $DIR/resources/
 
+# Update hosts file entries
+$DIR/rewrite-hosts.sh
+
 minikube dashboard
