@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
-minikube start --cpus=4 --memory=8g --vm=true
+DIR=`dirname $0`
+
+minikube start \
+    --cpus=4 \
+    --memory=8g \
+    --vm=true \
+    --disk-size=60g
 minikube addons enable ingress
 minikube addons enable metrics-server
 
 # Certmanager
-cert-manager/setup.sh
+$DIR/cert-manager/setup.sh
+
+# Other resources
+kubectl apply -f $DIR/resources/
+
+minikube dashboard
