@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ingress-controller
+  namespace: ingress-nginx
+  labels:
+    app.kubernetes.io/name: cluster-local
+    app.kubernetes.io/component: ingress-controller-service
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
+  ports:
+    - port: 80
+      name: http
+    - port: 443
+      name: https
