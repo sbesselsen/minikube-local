@@ -1,0 +1,8 @@
+releases:
+  - name: ingress-nginx
+    namespace: ingress-nginx
+    missingFileHandler: Error
+    chart: ingress-nginx/ingress-nginx
+    version: 3.19.0
+    values:
+      - ./values.yaml

@@ -1,0 +1,5 @@
+apiVersion: v2
+description: Create a simple echo service
+name: echo
+type: application
+version: 0.1.0

@@ -1,0 +1,22 @@
+{{- if .Values.echo.enabled -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  labels:
+    app: echo
+  name: echo
+spec:
+  rules:
+    - host: "echo.{{ .Values.defaultIngressSubdomain }}"
+      http:
+        paths:
+          - backend:
+              serviceName: echo
+              servicePort: 80
+  tls:
+    - hosts:
+        - "echo.{{ .Values.defaultIngressSubdomain }}"
+      secretName: tls-echo-ingress
+{{- end -}}

@@ -1,0 +1,25 @@
+{{- if .Values.acmeEmail -}}
+{{- if .Values.defaultIngressSubdomain -}}
+apiVersion: cert-manager.io/v1beta1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    email: {{ .Values.acmeEmail | quote }}
+    privateKeySecretRef:
+      name: letsencrypt-prod-account-key
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers:
+      - selector:
+          dnsZones:
+            - {{ .Values.defaultIngressSubdomain | quote }}
+        dns01:
+          route53:
+            region: {{ .Values.certManagerRoute53.region | required ".Values.certManagerRoute53.region is required if acmeEmail is set" | quote }}
+            accessKeyID: {{ .Values.certManagerRoute53.accessKeyId | required ".Values.certManagerRoute53.accessKeyId is required if acmeEmail is set" | quote }}
+            secretAccessKeySecretRef:
+              name: letsencrypt-prod-route53-secret
+              key: secretKey
+{{- end -}}
+{{- end -}}

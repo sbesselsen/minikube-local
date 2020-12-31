@@ -1,0 +1,8 @@
+releases:
+  - name: letsencrypt-issuer
+    namespace: cert-manager
+    missingFileHandler: Error
+    chart: ../../charts/letsencrypt-issuer
+    version: 0.1.0
+    values:
+      - ../../values.yaml

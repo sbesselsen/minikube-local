@@ -1,0 +1,5 @@
+apiVersion: v2
+description: Create an issuer based on DNS01 to gets globally valid HTTPS certificates
+name: letsencrypt-issuer
+type: application
+version: 0.1.0

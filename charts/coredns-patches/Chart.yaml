@@ -1,0 +1,5 @@
+apiVersion: v2
+description: Patch CoreDNS to support pod-to-pod communication via ingress
+name: coredns-patches
+type: application
+version: 0.1.0

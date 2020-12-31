@@ -1,0 +1,12 @@
+defaultIngressSubdomain: local.mydomain.dev
+
+# If you want to get certificates through Let's Encrypt + Route53 DNS validation, fill these in:
+acmeEmail:
+certManagerRoute53:
+  region:
+  accessKeyId:
+  secretAccessKey:
+
+# Enable the echo service at echo.<defaultIngressSubdomain> to test ingress controller + cert manager.
+echo:
+  enabled: true

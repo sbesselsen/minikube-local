@@ -1,0 +1,8 @@
+releases:
+  - name: coredns-patches
+    namespace: kube-system
+    missingFileHandler: Error
+    chart: ../../charts/coredns-patches
+    version: 0.1.0
+    values:
+      - ../../values.yaml
