@@ -2,3 +2,10 @@ controller:
   config:
     proxy-buffer-size: "128k"
     proxy-body-size: "200m"
+  service:
+    ports:
+      http: 80
+      https: 443
+  ingressClassResource:
+    default: true
+  watchIngressWithoutClass: true

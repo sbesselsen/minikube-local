@@ -3,6 +3,6 @@ releases:
     namespace: cert-manager
     missingFileHandler: Error
     chart: jetstack/cert-manager
-    version: "v1.1.0"
+    version: "v1.5.3"
     values:
       - ./values.yaml
