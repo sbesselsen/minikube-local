@@ -10,3 +10,6 @@ certManagerRoute53:
 # Enable the echo service at echo.<defaultIngressSubdomain> to test ingress controller + cert manager.
 echo:
   enabled: true
+
+util:
+  enabled: true

@@ -1,0 +1,8 @@
+releases:
+  - name: util
+    namespace: util
+    missingFileHandler: Error
+    chart: ../../charts/util
+    version: 0.1.0
+    values:
+      - ../../values.yaml
