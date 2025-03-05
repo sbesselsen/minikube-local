@@ -8,6 +8,7 @@ metadata:
     app: echo
   name: echo
 spec:
+  ingressClassName: nginx
   rules:
     - host: "echo.{{ .Values.defaultIngressSubdomain }}"
       http:

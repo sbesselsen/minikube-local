@@ -8,4 +8,4 @@ controller:
       https: 443
   ingressClassResource:
     default: true
-  watchIngressWithoutClass: true
+  watchIngressWithoutClass: false
