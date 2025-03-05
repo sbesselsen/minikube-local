@@ -8,4 +8,6 @@ controller:
       https: 443
   ingressClassResource:
     default: true
+  # podAnnotations:
+  #   linkerd.io/inject: enabled
   watchIngressWithoutClass: false
